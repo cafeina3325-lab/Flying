@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  /* ======================================================
+     FLYING STUDIO – Tattoo Web Color System
+     Concept: Bright Dark Mode / Ink Green / Brown / Gold
+     ====================================================== */
+
+  /* ------------------------------
+     1. Dark Base (Bright Dark Mode)
+     ------------------------------ */
+  --bg-black-deep: #070A09;
+  --bg-forest-black: #0B1411;
+  /* main background */
+  --bg-dark-moss: #0F1F1A;
+  --bg-soft-dark-green: #132722;
+  --bg-smoky-olive: #1B2F28;
+  --bg-card-dark: #121A18;
+  --bg-glass-dark: rgba(15, 31, 26, 0.6);
+
+  /* ------------------------------
+     2. Ink Green (Eye-friendly)
+     ------------------------------ */
+  --green-ink-dark: #123F35;
+  --green-ink-main: #1E6F5C;
+  /* primary accent */
+  --green-jade: #2FA38A;
+  --green-emerald-muted: #3A8F7A;
+  --green-sage-light: #7FB3A1;
+  --green-mist: #A8CFC3;
+
+  /* ------------------------------
+     3. Brown / Earth / Skin Tone
+     ------------------------------ */
+  --brown-charcoal: #241A14;
+  --brown-burnt-umber: #3A2A1F;
+  --brown-ink: #5A3F2B;
+  --brown-leather: #7A5435;
+  --brown-warm-earth: #8F6A4A;
+  --brown-skin-shadow: #A17C5B;
+  --brown-soft-sand: #C1A07A;
+
+  /* ------------------------------
+     4. Gold (Luxury / Signature)
+     ------------------------------ */
+  --gold-ancient-dark: #6E5A2E;
+  --gold-aged: #8C7442;
+  --gold-antique: #B59A5A;
+  /* signature gold */
+  --gold-soft: #D6BE8A;
+  --gold-glow-light: #E8D9A8;
+  --gold-highlight: #FFF1C1;
+
+  /* Gold Glow (for effects) */
+  --gold-glow-weak: rgba(181, 154, 90, 0.15);
+  --gold-glow-medium: rgba(181, 154, 90, 0.35);
+  --gold-glow-strong: rgba(214, 190, 138, 0.6);
+
+  /* ------------------------------
+     5. Text Colors (Dark Mode)
+     ------------------------------ */
+  --text-white-main: #EDEDED;
+  --text-white-soft: #C9D1CD;
+  --text-white-muted: #B8C0BC;
+  /* Keeping this but adding requested muted */
+  --text-white-muted-new: #C9D1CD;
+  /* Muted per request */
+  --text-white-dim: #7A8A84;
+  --text-disabled: #55635E;
+
+  /* ------------------------------
+     6. Border / Line / Divider
+     ------------------------------ */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  /* Updated opacity */
+  --border-soft: rgba(255, 255, 255, 0.12);
+  --border-gold-soft: rgba(181, 154, 90, 0.35);
+  --border-gold-strong: rgba(181, 154, 90, 0.7);
+
+  /* ------------------------------
+     7. Accent / Highlight (Limited)
+     ------------------------------ */
+  --accent-red-deep: #8C1D18;
+  --accent-rust-orange: #B4532A;
+  --accent-ink-blue: #1E3A5F;
+  --accent-muted-purple: #4A3B5C;
+  --accent-blood-wine: #5C1F2A;
+
+  /* ------------------------------
+     8. Gradient Presets
+     ------------------------------ */
+  --gradient-dark-depth:
+    linear-gradient(180deg, #0B1411 0%, #132722 100%);
+
+  --gradient-green-depth:
+    linear-gradient(135deg, #0F1F1A 0%, #1E6F5C 100%);
+
+  --gradient-gold-shine:
+    linear-gradient(90deg, #8C7442 0%, #D6BE8A 50%, #8C7442 100%);
+
+  --gradient-event-highlight:
+    radial-gradient(circle at center, rgba(181, 154, 90, 0.25), transparent 70%);
+
+  /* ------------------------------
+     9. Shadow / Glow Presets
+     ------------------------------ */
+  --shadow-deep:
+    0 20px 60px rgba(0, 0, 0, 0.65);
+
+  --shadow-gold-glow:
+    0 0 30px rgba(181, 154, 90, 0.35);
+
+  --shadow-soft-lift:
+    0 10px 30px rgba(0, 0, 0, 0.4);
+
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-forest-black);
+  color: var(--text-white-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hide Scrollbar Utility */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
