@@ -3,13 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NAV_LINKS = [
-    { label: "Home", href: "/" },
-    { label: "Genre", href: "/genre" }, // Redirects to genre section logic usually, but here we link page
-    { label: "Gallery", href: "/gallery" },
-    { label: "Contact", href: "/contact" },
-    { label: "FAQ", href: "/faq" },
-];
+import { NAV_LINKS } from "@/app/constants";
 
 export default function NavBar() {
     const pathname = usePathname();

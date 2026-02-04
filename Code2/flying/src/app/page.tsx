@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Footer from "@/components/Footer";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -29,9 +30,9 @@ function GenrePreviewCard({ genre }: { genre: Genre }) {
   return (
     <Link
       href={href}
-      className="group relative h-40 sm:h-48 perspective-1000 w-full block"
+      className="group relative h-[25rem] sm:h-[30rem] perspective-1000 w-full block"
     >
-      <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-gold-soft transition-all duration-500 ease-out transform group-hover:-translate-y-2 group-hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.7)] backdrop-blur-md">
+      <div className="glass-card-hover absolute inset-0 flex flex-col items-center justify-center rounded-[2rem] group-hover:-translate-y-2">
         <div className="w-8 h-[2px] bg-white/20 mb-5 group-hover:w-16 group-hover:bg-gold-antique transition-all duration-500"></div>
         <span className="text-sm sm:text-base font-medium uppercase tracking-[0.25em] text-white-muted group-hover:text-white-main transition-colors duration-300 text-center px-4 leading-relaxed">
           {displayName}
@@ -396,7 +397,7 @@ export default function HomePage() {
 
         {/* Scene C - Event (Float Glass Panel) */}
         <section
-          className="min-h-screen event-section flex items-center justify-center py-24 relative perspective-1000"
+          className="min-h-screen event-section flex items-center justify-center py-32 relative perspective-1000"
           id="section-c"
         >
           <style>{`
@@ -421,24 +422,24 @@ export default function HomePage() {
             {/* Header floating outside - Left Aligned & Standardized */}
             <div className="mb-12">
               <ScrollReveal>
-                <h2 className="text-4xl font-semibold tracking-wider text-white-main border-b border-gold-soft/30 pb-4 inline-block">
+                <h2 className="text-3xl sm:text-5xl font-bold tracking-widest text-[#D6BE8A] drop-shadow-[0_0_25px_rgba(214,190,138,0.3)] border-b-2 border-[#D6BE8A]/60 py-8 px-12 inline-block uppercase text-center">
                   이달의 이벤트
                 </h2>
-                <span className="block text-gold-antique text-base tracking-[0.5em] uppercase mt-4 font-light opacity-80">
+                <span className="block text-gold-active text-base tracking-[0.5em] uppercase mt-4 font-light opacity-80">
                   MONTHLY DROPS
                 </span>
               </ScrollReveal>
             </div>
 
             {/* Main Glass Panel */}
-            <div className="relative rounded-[2rem] bg-[linear-gradient(135deg,rgba(58,42,31,0.55),rgba(15,31,26,0.55))] border border-[rgba(181,154,90,0.18)] backdrop-blur-sm p-6 sm:p-10">
+            <div className="glass-panel-heavy p-6 sm:p-10">
 
               {/* Horizontal Scroll Grid (2 rows) */}
               <div className="w-full mb-8">
                 <DraggableScrollContainer className="flex overflow-x-auto pb-4 gap-4 scrollbar-hide snap-x">
-                  <div className="grid grid-rows-2 grid-flow-col gap-4 w-max">
+                  <div className="grid grid-rows-1 grid-flow-col gap-4 w-max">
                     {MOCK_PORTFOLIO.slice(0, 16).map((item) => (
-                      <div key={item.id} className="w-[180px] sm:w-[220px] aspect-[4/5] relative rounded-lg overflow-hidden border border-white/10 group snap-start bg-black/20 pointer-events-none">
+                      <div key={item.id} className="glass-card-hover w-[180px] sm:w-[220px] aspect-[4/5] relative rounded-lg group snap-start">
                         <Image
                           src={item.image}
                           alt={item.artist}
@@ -456,9 +457,9 @@ export default function HomePage() {
               </div>
 
               {/* Notice Box */}
-              <div className="p-6 rounded-xl bg-black/40 border border-white/5">
-                <h3 className="text-[#D6BE8A] font-bold mb-4 tracking-widest text-sm uppercase">Notice</h3>
-                <ul className="text-sm text-stone-300 space-y-3 leading-relaxed font-light">
+              <div className="p-6 rounded-xl bg-black/50 border border-gold-soft/30">
+                <h3 className="text-gold-active font-bold mb-4 tracking-widest text-sm uppercase">Notice</h3>
+                <ul className="text-sm text-[#D6BE8A]/90 space-y-3 leading-relaxed font-light">
                   <li className="flex items-start gap-3">
                     <span className="text-[#D6BE8A] mt-1.5 w-1 h-1 rounded-full bg-current block shrink-0"></span>
                     <span>이달의 이벤트 도안은 한정 기간 동안만 진행됩니다.<br /><span className="text-stone-400">예약 마감 시 조기 종료될 수 있습니다.</span></span>
@@ -475,7 +476,7 @@ export default function HomePage() {
 
         {/* Scene D - Genre (Floating Tiles) */}
         <section
-          className="min-h-screen genre-section flex items-center justify-center py-24 relative"
+          className="min-h-screen genre-section flex items-center justify-center py-32 relative"
           id="section-d"
         >
           <style>{`
@@ -499,7 +500,7 @@ export default function HomePage() {
           <div className="w-full max-w-6xl px-4 sm:px-6">
             <div className="flex flex-col items-start mb-12">
               <ScrollReveal>
-                <h2 className="text-4xl font-semibold tracking-wider text-white-main border-b border-gold-soft/30 pb-4 inline-block">
+                <h2 className="text-3xl sm:text-5xl font-bold tracking-widest text-[#D6BE8A] drop-shadow-[0_0_25px_rgba(214,190,138,0.3)] border-b-2 border-[#D6BE8A]/60 py-8 px-12 inline-block uppercase text-center">
                   STYLES
                 </h2>
               </ScrollReveal>
@@ -508,9 +509,9 @@ export default function HomePage() {
             {/* Floating Tiles Container */}
             <div className="relative">
               {/* Background Glow */}
-              <div className="absolute inset-0 bg-[#3A2A1F]/10 blur-[100px] rounded-full pointer-events-none"></div>
+              <div className="absolute inset-0 bg-[#3A2A1F]/20 blur-[100px] rounded-full pointer-events-none"></div>
 
-              <div className="relative rounded-[2rem] bg-[linear-gradient(135deg,rgba(58,42,31,0.55),rgba(15,31,26,0.55))] border border-[rgba(181,154,90,0.18)] backdrop-blur-sm p-8 sm:p-12">
+              <div className="glass-panel-heavy p-8 sm:p-12">
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                   {GENRES.map((g, i) => (
                     <div key={g} style={{ transitionDelay: `${i * 50}ms` }}>
@@ -522,143 +523,131 @@ export default function HomePage() {
 
               <div className="mt-12 text-center">
                 <p className="text-white-dim text-xs tracking-[0.3em] font-light">
-                  장르를 선택하면 포트폴리오로 이동합니다
+                  장르를 선택하면 해당 챕터로 이동합니다.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Scene E - Location (Grounded) */}
+        {/* Scene E - Consultation Flow (Grounded) */}
         <section
-          className="min-h-[80vh] location-section flex items-center justify-center py-24 relative"
+          className="min-h-[80vh] flow-section flex items-center justify-center py-32 relative"
           id="section-e"
         >
           <style>{`
             /* Responsive section heights - all modes */
             @media (min-width: 376px) and (max-width: 639px) {
-              section.location-section { min-height: 80vh !important; }
+              section.flow-section { min-height: 80vh !important; }
             }
             @media (min-width: 640px) and (max-width: 767px) {
-              section.location-section { min-height: 85vh !important; }
+              section.flow-section { min-height: 85vh !important; }
             }
             @media (min-width: 768px) and (max-width: 1023px) {
-              section.location-section { min-height: 90vh !important; }
+              section.flow-section { min-height: 90vh !important; }
             }
             @media (min-width: 1024px) and (max-width: 1439px) {
-              section.location-section { min-height: 95vh !important; }
+              section.flow-section { min-height: 95vh !important; }
             }
             @media (min-width: 1440px) {
-              section.location-section { min-height: 100vh !important; }
+              section.flow-section { min-height: 100vh !important; }
             }
           `}</style>
           <div className="w-full max-w-6xl px-4 sm:px-6">
-            <div className="flex flex-col items-start mb-12">
+            <div className="flex flex-col items-start mb-16">
               <ScrollReveal>
-                <h2 className="text-4xl font-semibold tracking-wider text-white-main border-b border-gold-soft/30 pb-4 inline-block">
-                  LOCATION
+                <h2 className="text-3xl sm:text-5xl font-bold tracking-widest text-[#D6BE8A] drop-shadow-[0_0_25px_rgba(214,190,138,0.3)] border-b-2 border-[#D6BE8A]/60 py-8 px-12 inline-block uppercase text-center">
+                  Consultation Flow
                 </h2>
-                <span className="block text-gold-antique text-base tracking-[0.5em] uppercase mt-4 font-light opacity-80">
-                  Visit Us
+                <span className="block text-gold-soft/80 text-sm sm:text-base tracking-[0.05em] mt-6 font-light break-keep">
+                  모든 시술은 대면 상담을 통해 결정됩니다.
                 </span>
               </ScrollReveal>
             </div>
 
-            {/* Panel */}
-            <div className="rounded-[2.5rem] border border-[rgba(181,154,90,0.18)] bg-[#0B1411]/90 backdrop-blur-xl p-3 shadow-[0_20px_60px_rgba(0,0,0,0.7)]">
-              <div className="rounded-[2rem] overflow-hidden bg-[linear-gradient(135deg,rgba(58,42,31,0.55),rgba(15,31,26,0.55))] border border-white/5">
-                {/* Content Grid: Text Left, Map Right */}
-                <div className="grid md:grid-cols-2">
-                  {/* Info */}
-                  <div className="p-10 sm:p-14 flex flex-col justify-between bg-gradient-to-br from-white/[0.03] to-transparent">
-                    <div>
-                      <h3 className="text-2xl text-white-main font-thin tracking-wider mb-8">
-                        Flying Studio
+            {/* Main Glass Panel for Steps */}
+            <div className="glass-panel-heavy p-8 sm:p-12 mb-20">
+              {/* Steps Grid */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-10%" }}
+                variants={{
+                  visible: { transition: { staggerChildren: 0.15 } }
+                }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              >
+                {[
+                  {
+                    label: "01",
+                    title: "Online Request",
+                    body: "원하시는 시술 부위와 스타일을 선택하고 대면 상담 요청을 접수합니다."
+                  },
+                  {
+                    label: "02",
+                    title: "In-Person Consultation",
+                    body: "대면 상담을 통해 디자인 방향, 시술 가능 여부, 세부 조건을 확인합니다."
+                  },
+                  {
+                    label: "03",
+                    title: "Decision",
+                    body: "상담 결과에 따라 시술 진행 여부가 결정되며, 상황에 따라 시술이 제한되거나 거절될 수 있습니다."
+                  },
+                  {
+                    label: "04",
+                    title: "Tattoo Session",
+                    body: "시술이 확정된 경우에 한해 일정 협의 후 시술이 진행됩니다."
+                  }
+                ].map((step) => (
+                  <motion.div
+                    key={step.label}
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                    }}
+                    className="glass-card-hover group relative p-8 rounded-[2rem]"
+                  >
+                    <span className="text-6xl font-bold text-gold-antique/20 absolute top-4 right-6 select-none group-hover:text-gold-antique/40 transition-colors">
+                      {step.label}
+                    </span>
+                    <div className="relative z-10 pt-8">
+                      <h3 className="text-xl text-gold-soft font-medium tracking-wide mb-4 group-hover:text-gold-active transition-colors">
+                        {step.title}
                       </h3>
-
-                      <div className="space-y-8">
-                        <div className="group">
-                          <div className="text-xs text-gold-antique tracking-widest uppercase mb-2 group-hover:text-white-main transition-colors">
-                            Address
-                          </div>
-                          <p className="text-white-muted text-sm font-light leading-relaxed break-keep">
-                            인천광역시 남동구 <br />
-                            <span className="text-white-dim text-xs mt-2 block">
-                              상세 주소는 예약 확정 후 안내드립니다.
-                            </span>
-                          </p>
-                        </div>
-
-                        <div className="group">
-                          <div className="text-xs text-gold-antique tracking-widest uppercase mb-2 group-hover:text-white-main transition-colors">
-                            Guideline
-                          </div>
-                          <p className="text-white-muted text-sm font-light leading-relaxed break-keep">
-                            대면 상담 및 시술 방문 시 <br />
-                            <span className="underline underline-offset-4 text-white-main">
-                              신분증
-                            </span>
-                            을 반드시 지참해 주시기 바랍니다.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-12 pt-8 border-t border-white/5">
-                      <p className="text-white-dim text-xs tracking-wider">
-                        operating hours: 10:00 - 20:00
+                      <p className="text-sm text-white-muted leading-loose break-keep font-light group-hover:text-white-main transition-colors">
+                        {step.body}
                       </p>
                     </div>
-                  </div>
-
-                  {/* Map Area */}
-                  <div className="relative min-h-[300px] bg-card-dark">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-12 h-12 border border-gold-soft rounded-full flex items-center justify-center mx-auto mb-4 text-gold-antique">
-                          <span className="block w-2 h-2 bg-gold-antique rounded-full"></span>
-                        </div>
-                        <span className="text-white-dim text-xs tracking-[0.3em] uppercase">
-                          Map View
-                        </span>
-                      </div>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black-deep/80 pointer-events-none"></div>
-                  </div>
-                </div>
-              </div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
+
+            {/* Bottom Interaction */}
+            <div className="text-center">
+              <p className="text-sm text-stone-400 mb-10 tracking-wide font-light">
+                온라인 접수는 시술 예약이 아니며, 상담 결과에 따라 시술이 진행되지 않을 수 있습니다.
+              </p>
+
+              <Link href="/contact">
+                <button className="group relative px-10 py-4 sm:px-14 sm:py-5 rounded-full overflow-hidden bg-gold-soft/5 border border-gold-soft hover:border-gold-active hover:shadow-[0_0_20px_rgba(214,190,138,0.3)] text-gold-active transition-all duration-500">
+                  <span className="absolute inset-0 w-full h-full bg-gold-soft/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></span>
+                  <span className="relative z-10 text-sm sm:text-base tracking-[0.2em] font-semibold uppercase">
+                    Request Consultation
+                  </span>
+                </button>
+              </Link>
+
+              <p className="mt-6 text-[10px] text-white-dim/50 tracking-wider">
+                상담 예약은 로그인 후 진행 가능합니다.
+              </p>
+            </div>
+
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="py-20 border-t border-white/5 bg-[#050807]">
-          <div className="max-w-6xl mx-auto px-6 flex flex-col items-center justify-center text-center">
-            <h4 className="text-white-dim text-xl tracking-[0.8em] font-extralight mb-10 mix-blend-difference">
-              FLYING STUDIO
-            </h4>
-            <div className="flex gap-8 mb-10">
-              <a
-                href="#"
-                className="text-white-dim hover:text-gold-antique transition-colors text-xs tracking-widest uppercase"
-              >
-                Instagram
-              </a>
-              <a
-                href="#"
-                className="text-white-dim hover:text-gold-antique transition-colors text-xs tracking-widest uppercase"
-              >
-                Contact
-              </a>
-            </div>
-            <p className="text-white-dim text-[10px] uppercase tracking-widest leading-loose">
-              플라잉 스튜디오 · 대표: 김땡땡 · 사업자등록번호: 123-45-67890{" "}
-              <br className="sm:hidden" />
-              개인정보관리책임자: 박땡땡 · 인천광역시 남동구 <br />
-              Copyright © 2026 Flying Studio. All rights reserved.
-            </p>
-          </div>
-        </footer>
+        {/* Agency Style Fat Footer */}
+        <Footer />
       </main>
     </>
   );

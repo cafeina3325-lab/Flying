@@ -141,11 +141,40 @@ video {
   display: block;
 }
 
+/* Glassmorphism Utilities */
+.glass-panel-heavy {
+  @apply bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-[2rem];
+  box-shadow: 0 0 40px -10px rgba(181, 154, 90, 0.3);
+}
+
+.glass-card-hover {
+  @apply relative overflow-hidden bg-white/[0.03] border border-white/5 backdrop-blur-sm transition-all duration-500 ease-out;
+}
+
+.glass-card-hover:hover {
+  @apply bg-white/[0.08];
+  border-color: rgba(214, 190, 138, 0.5);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+}
+
 /* Hide Scrollbar Utility */
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
+
 .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Hide Next.js Development Indicators (User Requested) */
+[class^="nextjs-toast-"],
+[data-nextjs-toast],
+div[class*="nextjs-foast"],
+#nextjs-dev-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
 }

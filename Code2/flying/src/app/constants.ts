@@ -648,3 +648,11 @@ export const HOME_EVENTS: EventItem[] = [
     month_tag: "2025-12",
   },
 ];
+
+export const NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Genre", href: "/genre" },
+  { label: "Contact", href: "/contact" },
+  { label: "FAQ", href: "/faq" },
+] as const;
